@@ -7,8 +7,15 @@ PrintCoord(N);
 
 static void InitQuarterByUser(ref int N)
 {
-    Console.Write("Введите номер четверти от 1 до 4: ");
-    int N = int.Parse(Console.ReadLine() ?? "");
+    try
+    {
+        Console.Write("Введите номер четверти от 1 до 4: ");
+        N = int.Parse(Console.ReadLine() ?? "");
+    }
+    catch(Exception exc)
+    {
+        Console.WriteLine($"Ошибка ввода данных! {exc.Message}");
+    }
 }
 
 static void PrintCoord(int N)
